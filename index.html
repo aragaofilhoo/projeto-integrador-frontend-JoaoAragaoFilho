@@ -3,22 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Password Generator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">     
+    <title>Password Generator</title>
 </head>
 <body>
-    <div id="container">
+    <header id="container">
         <img src="assets/images/cadeado.jpg" alt="">
-        <h1 id="title">Gerar Senha</h1>
-        <p>Atenção aos critérios!</p>
+    </header>
+        
+    <main>
+        <section>
+            <form action="novasenha" method="POST">
+                <fieldset>
+                    <legend><h1 id="title">Nova Senha</h1></legend>
+
+                    <div>
+                        <label for="nome">Seu Nome</label>
+                        <input type="text" id="nome" name="nome">
+                    </div>
+
+                    <div>
+                        <label for="email">Seu E-mail:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div>
+                        <label for="nova senha">Nova Senha</label><br>
+                        <input type="password" id="nova senha" name="nova senha" placeholder="Digite sua nova senha" minlength="8" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W_]).{8,}"required><br>
+                    </div>
+
+                    <div>
+                        <label for="confirme nova senha">Confirme Nova Senha</label><br>
+                        <input type="password" id="confirme nova senha" name="confirme nova senha" placeholder="Confirme sua nova senha" minlength="8" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W_]).{8,}"required><br>
+                    </div>
+
+                        <button id="generate">
+                            Gerar Senha
+                        </button>
+                    </div>
+                </fieldset>
+            </form>
+        </section>
+
+        <section>
+            <h2>Atenção aos critérios!</h2>
         <ul>
             <li>Incluir letras Maiúsculas e minúsculas</li>
             <li>Incluir número</li>
             <li>Incluir caractere especial</li>
         </ul>
-        <p>Em caso de dúvida entre em <a href="tiresuaduvida@suporte.com.br" target="_blank" rel="noopener noreferrer">contato.</a></p>
 
-        </div>
-    </div>
-    
+        </section>
+        </main>
+
+        <footer>
+            <p>Em caso de dúvida entre em <a href="tiresuaduvida@suporte.com.br" target="_blank" rel="noopener noreferrer">contato.</a></p>
+        </footer>
+
 </body>
 </html>
