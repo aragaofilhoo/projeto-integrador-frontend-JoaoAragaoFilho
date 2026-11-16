@@ -1,0 +1,99 @@
+:root {
+  --cor-fundo: #000000;
+  --cor-texto: #ffffff;
+  --espacamento-padrao: 16px;
+  --borda-arredondada: 8px;
+  --cor-link: #0026ff;
+  --cor-visitado: #ff0303;
+
+}
+
+body {
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+  padding: var(--espacamento-padrao);
+  font-family: Arial, serif;
+}
+
+#container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#home {
+  width: 150px;
+  height: 180px;
+  background-image: url(img_navsprites.gif);
+  background-position: 0 0;
+}
+
+audio {
+  display: none;
+}
+
+/* COMBINADOR DE AGRUPAMENTO (,)
+       Motivo da escolha: Tanto o título quanto o subtítulo precisam da mesma cor defonte e sem margem superior. */
+h1, h2 {
+  font-family: Arial, serif;
+  margin-top: 0;
+  color: #f8ea24;
+}
+
+.card {
+  display: flex;
+  border-radius: var(--borda-arredondada);
+  padding: var(--espacamento-padrao);
+  font-size: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 
+ Utilizamos 'rem' em vez de 'px' para o tamanho de fonte porque essa unidade é relativa ao tamanho da fonte. E isso garante que em casos do usuário alterar o tamanho padrão da fonte nas configurações do navegador, por motivos de acessibilidade ou preferência visual, toda a tipografia do site será redimensionada proporcionalmente. Ao contrário dos Valores fixos em 'px', que ignoram essas preferências e prejudicam a experiência de leitura.
+ */
+
+.botao {
+  background-color: #b9b9b9;
+  color: #000000;
+  border-radius: var(--borda-arredondada);
+  padding: calc(var(--espacamento-padrao) / 2) var(--espacamento-padrao);
+  margin: 10px;
+  border: none;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+}
+
+.botao:hover {
+  background-color: #13bb1b;
+}
+
+.destaque {
+    display: flex;
+    font-size: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:link { 
+  color: var(--cor-link);
+}
+
+a:visited {
+  color: var(--cor-visitado);
+}
+
+a:hover {
+  color: #38bdf8;
+  border-bottom-color: #38bdf8;
+}
+
+a:active {
+  color: #0026ff;
+  transform: translateY(1px);
+}
