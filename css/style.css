@@ -15,6 +15,35 @@ body {
   font-family: Arial, serif;
 }
 
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+}
+
+.nav-links a:hover {
+  background: #0a00c7;
+  color: #38bdf8;
+}
+
+.nav-links a:focus-visible {
+  outline: 3px solid #0a00c7;
+  outline-offset: 2px;
+}
+
 #container {
     display: flex;
     justify-content: center;
@@ -37,13 +66,46 @@ audio {
 h1, h2 {
   font-family: Arial, serif;
   margin-top: 0;
-  color: #f8ea24;
+}
+
+fieldset {
+  padding: 1rem;
+}
+
+legend {
+  padding: 0 8px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  box-sizing: border-box;
+  padding: 24px;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.campo label {
+  margin: 10px;
+}
+
+.campo input {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  margin: 0;
 }
 
 .card {
   display: flex;
   border-radius: var(--borda-arredondada);
   padding: var(--espacamento-padrao);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   font-size: 1rem;
   justify-content: center;
   align-items: center;
@@ -69,11 +131,48 @@ h1, h2 {
   background-color: #13bb1b;
 }
 
+.secao {
+  max-width: 1100px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.secao h2 {
+  margin-bottom: 1.5rem;
+}
+
 .destaque {
     display: flex;
+    flex-direction: column;
     font-size: 1rem;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.destaque > h2 {
+  color:#f8ea24;
+}
+
+.destaque > ul {
+  list-style: none;
+}
+
+.destaque > ul:nth-child(even) {
+  border-left: 5px solid #f8ea24;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  place-items: center;
+}
+
+.grid h3 {
+  margin-bottom: 0.5rem;
 }
 
 a {
