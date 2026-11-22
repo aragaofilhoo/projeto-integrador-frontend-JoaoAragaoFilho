@@ -37,3 +37,22 @@ classificarPontuacao(100);
 classificarPontuacao(80);
 classificarPontuacao(55);
 classificarPontuacao(24);
+
+const contasAnalisadas = contasCadastradas.map(function (conta) {
+  const pontuacao = calcularPontuacao(conta);
+  return {
+    servico: conta.servico,
+    pontuacao: pontuacao,
+    faixa: classificarPontuacao(pontuacao)
+  };
+});
+
+const contasEmRisco = contasAnalisadas.filter(function (item) {
+  return item.faixa === "atencao" || item.faixa === "critica";
+});
+
+const somaPontuacoes = contasAnalisadas.reduce(function (acumulador, item) {
+  return acumulador + item.pontuacao;
+}, 0);
+
+const mediaPontuacoes = somaPontuacoes / contasAnalisadas.length;
