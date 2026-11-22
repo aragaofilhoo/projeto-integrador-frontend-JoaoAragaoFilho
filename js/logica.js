@@ -69,3 +69,27 @@ function pedirTamanhoMinimo() {
 }
 
 const tamanhoMinimo = pedirTamanhoMinimo();
+
+function classificarForca(tamanho, usaSimbolos) {
+  if (tamanho >= 16 && usaSimbolos === true) {
+    return "muito forte";
+  } else if (tamanho >= 12) {
+    return "forte";
+  } else if (tamanho >= 8) {
+    return "media";
+  } else {
+    return "fraca";
+  }
+}
+
+const relatorio = [];
+
+for (const senha of senhasExemplo) {
+  const forca = classificarForca(senha.tamanho, senha.usaSimbolos);
+  relatorio.push({
+    nome: senha.nome,
+    tamanho: senha.tamanho,
+    categoria: senha.categoria,
+    forca: forca
+  });
+}
