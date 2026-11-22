@@ -34,3 +34,38 @@ const senhasExemplo = [
   { nome: "senhaStreaming", tamanho: 6, categoria: "streaming", usaSimbolos: false },
   { nome: "senhaCofre",    tamanho: 24, categoria: "banco",  usaSimbolos: true  }
 ];
+
+const TAMANHO_MINIMO_PERMITIDO = 4;
+const TAMANHO_MAXIMO_PERMITIDO = 64;
+
+function pedirTamanhoMinimo() {
+  const resposta = prompt(
+    `Informe o tamanho mínimo aceitável de senha (${TAMANHO_MINIMO_PERMITIDO} a ${TAMANHO_MAXIMO_PERMITIDO}):`
+  );
+
+  if (resposta === null) {
+    console.warn("Entrada cancelada. Usando valor padrão: 8.");
+    return 8;
+  }
+
+  if (resposta.trim() === "") {
+    console.warn("Nenhum valor digitado. Usando valor padrão: 8.");
+    return 8;
+  }
+
+  const numero = Number(resposta);
+
+  if (Number.isNaN(numero)) {
+    console.warn("Isso não é um número. Usando valor padrão: 8.");
+    return 8;
+  }
+
+  if (numero < TAMANHO_MINIMO_PERMITIDO || numero > TAMANHO_MAXIMO_PERMITIDO) {
+    console.warn(`Valor fora da faixa (${TAMANHO_MINIMO_PERMITIDO} a ${TAMANHO_MAXIMO_PERMITIDO}). Usando valor padrão: 8.`);
+    return 8;
+  }
+
+  return numero;
+}
+
+const tamanhoMinimo = pedirTamanhoMinimo();
