@@ -139,3 +139,25 @@ for (let i = 0; i < senhasExemplo.length; i++) {
 }
 
 const mediaTamanhos = somaTamanhos / senhasExemplo.length;
+
+const senhasDigitadas = [];
+let entrada;
+
+do {
+  entrada = prompt('Digite uma senha para testar (ou "sair" para encerrar):');
+
+  if (entrada === null) {
+    entrada = "sair";
+  }
+
+  entrada = entrada.trim();
+
+  if (entrada !== "" && entrada.toLowerCase() !== "sair") {
+    senhasDigitadas.push({
+      nome: `digitada${senhasDigitadas.length + 1}`,
+      tamanho: entrada.length,
+      categoria: "digitada",
+      forca: classificarForca(entrada.length, /[^a-zA-Z0-9]/.test(entrada))
+    });
+  }
+} while (entrada.toLowerCase() !== "sair");
