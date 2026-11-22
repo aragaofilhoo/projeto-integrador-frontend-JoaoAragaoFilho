@@ -8,19 +8,43 @@
     <title>Password Generator</title>
 </head>
 <body>
-    <nav clas="navbar">
-    <header id="container">
-        <img id="home" src="assets/images/cadeado.png" alt="">
-        <audio controls loop>
-            <source src="assets/images/Chopin.wav" type="audio/wav">
-            <source src="assets/images/Chopin.mp3" type="audio/mp3">
-        </audio>
+    <header class="header" id="container">
+    <nav class="navbar" aria-label="Navegação principal">
+        <button class="menu-toggle"]
+            type="button"
+            aria-label="Abrir menu de navegação"
+            aria-expanded="false"
+            aria-controls="menu-principal">
+            <span class="barra"></span>
+            <span class="barra"></span>
+            <span class="barra"></span>
+        </button>
+        <ul class="nav-links" id="menu-principal">
+            <li><a href="#inicio" class="ativo" aria-current="page">Início</a></li>
+            <li class="dropdown">
+        <a href="#ferramentas">Gerar Senha ▾</a>
+        <ul class="dropdown-menu">
+            <li><a href="#gerador">Gerar Nova Senha</a></li>
+            <li><a href="#verificador">Verificador de força</a></li>
+            <li><a href="#frase-senha">Frase-senha</a></li>
+        </li>
+        </ul>
+        <li><a href="#dicas">Critérios de Segurança</a></li>
+        <li><a href="#contato">Contato</a></li>
+            </ul>
     </nav>
     </header>
-        
     <main>
-        <article class="card">
-        <section class="secao">
+        <article class="card"></article>
+        <section id="inicio" class="secao">
+            <video src="assets/images/senha.mp4" autoplay loop muted playsinline></video>
+            <audio controls loop>
+                <source src="assets/images/Chopin.wav" type="audio/wav">
+                <source src="assets/images/Chopin.mp3" type="audio/mp3">
+            </audio>
+        </section>
+
+        <section id="ferramentas" class="secao">
             <form class="form" action="novasenha" method="POST">
                 <fieldset>
                     <legend><h1 id="title">Nova Senha</h1></legend>
@@ -52,10 +76,8 @@
                 </fieldset>
             </form>
         </section>
-        </article>
 
-        <article class="card">
-        <section class="destaque">
+        <section id="dicas" class="destaque">
             <h2>Atenção aos critérios!</h2>
         <ul>
             <li>Incluir letras MAIÚSCULAS e minúsculas.</li>
@@ -63,12 +85,14 @@
             <li>Incluir caractere(s) especial(s). [ex: ., ?, !, &, $, % ...]</li>
         </ul>
         </section>
-        </article>
-        </main>
 
-        <footer class="grid">
+        <section id="contato" class="secao">
+            <footer class="grid">
             <p>Em caso de dúvida entre em <a href="tiresuaduvida@suporte.com.br" target="_blank" rel="noopener noreferrer">contato.</a></p>
-        </footer>
-
+            </footer>
+        </section>
+        </article>
+    </main>
+<script src="js/logica.js" defer></script>
 </body>
 </html>
