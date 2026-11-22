@@ -87,7 +87,30 @@ function mostrarLista(itens, destino) {
 function criarElementoConta(item) {
   const li = document.createElement("li");
   li.textContent = `${item.servico}: ${item.pontuacao} pontos (${item.faixa})`;
-  li.classList.add("conta");       // classe comum a todos
-  li.classList.add(item.faixa);    // classe da faixa: excelente, boa, atencao ou critica
+  li.classList.add("conta");
+  li.classList.add(item.faixa);
   return li;
 }
+
+function calcularResumo(itens) {
+  const total = itens.reduce(function (acc, item) {
+    return acc + item.pontuacao;
+  }, 0);
+
+  const emRisco = itens.reduce(function (acc, item) {
+    const precisaAtencao = item.faixa === "atencao" || item.faixa === "critica";
+    return precisaAtencao ? acc + 1 : acc;
+  }, 0);
+
+  return {
+    quantidade: itens.length,
+    media: total / itens.length,
+    emRisco: emRisco
+  };
+}
+
+function formatarResumo(resumo) {
+  return `${resumo.quantidade} contas analisadas. Média: ${resumo.media.toFixed(1)} pontos. Em risco: ${resumo.emRisco}.`;
+}
+
+areaResumo.textContent = formatarResumo(calcularResumo(contasAnalisadas));
