@@ -161,3 +161,23 @@ do {
     });
   }
 } while (entrada.toLowerCase() !== "sair");
+
+console.log("===== ANÁLISE DE SENHAS =====");
+
+for (const item of relatorio) {
+  console.log(
+    `A ${item.nome} (${item.categoria}) tem ${item.tamanho} caracteres e é ${item.forca}. ${dicaPorCategoria(item.categoria)}`
+  );
+}
+
+console.log(`Tamanho mínimo escolhido: ${tamanhoMinimo}`);
+console.log(`Senhas que atendem o mínimo: ${quantidadeAtendeMinimo} de ${senhasExemplo.length}`);
+console.log(`Média de tamanho: ${mediaTamanhos.toFixed(1)} caracteres`);
+console.log(`Maior senha: ${nomeMaiorSenha} com ${maiorTamanho} caracteres`);
+
+console.table(relatorio);
+
+if (senhasDigitadas.length > 0) {
+  console.log("===== SENHAS DIGITADAS POR VOCÊ =====");
+  console.table(senhasDigitadas);
+}
