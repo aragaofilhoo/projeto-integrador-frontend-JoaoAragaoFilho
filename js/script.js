@@ -56,3 +56,17 @@ const somaPontuacoes = contasAnalisadas.reduce(function (acumulador, item) {
 }, 0);
 
 const mediaPontuacoes = somaPontuacoes / contasAnalisadas.length;
+
+const ordenadasPorPontuacao = [...contasAnalisadas].sort(function (a, b) {
+  return b.pontuacao - a.pontuacao;
+});
+
+const listaSenhas = document.querySelector("#lista-senhas");
+const areaResumo = document.querySelector("#resumo");
+
+if (listaSenhas === null || areaResumo === null) {
+  console.error("Elemento #lista-senhas ou #resumo não encontrado no HTML.");
+}
+
+if (listaSenhas !== null && areaResumo !== null) {
+}
