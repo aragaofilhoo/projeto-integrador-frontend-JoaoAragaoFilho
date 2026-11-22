@@ -93,3 +93,27 @@ for (const senha of senhasExemplo) {
     forca: forca
   });
 }
+
+function dicaPorCategoria(categoria) {
+  let dica;
+
+  switch (categoria) {
+    case "banco":
+      dica = "Use senha longa e ative a verificação em duas etapas.";
+      break;
+    case "email":
+      dica = "Seu e-mail recupera outras contas: proteja muito bem.";
+      break;
+    case "social":
+      dica = "Evite reutilizar essa senha em outros sites.";
+      break;
+    case "trabalho":
+      dica = "Siga a política de segurança da empresa.";
+      break;
+    default:
+      dica = "Prefira uma senha única para este serviço.";
+      break;
+  }
+
+  return dica;
+}
