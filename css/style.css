@@ -294,3 +294,25 @@ a:active {
   color: #0026ff;
   transform: translateY(1px);
 }
+
+.lista-senhas {
+  list-style: none;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.conta {
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  border-left: 6px solid;
+}
+
+.conta.excelente { border-left-color: #16a34a; background: #dcfce7; }
+.conta.boa       { border-left-color: #65a30d; background: #ecfccb; }
+.conta.atencao   { border-left-color: #f59e0b; background: #fef3c7; }
+.conta.critica   { border-left-color: #dc2626; background: #fee2e2; }
+
+.resumo {
+  font-weight: bold;
+  margin-bottom: 1rem;
+}

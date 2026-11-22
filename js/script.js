@@ -70,3 +70,24 @@ if (listaSenhas === null || areaResumo === null) {
 
 if (listaSenhas !== null && areaResumo !== null) {
 }
+
+function criarElementoConta(item) {
+  const li = document.createElement("li");
+  li.textContent = `${item.servico}: ${item.pontuacao} pontos (${item.faixa})`;
+  return li;
+}
+
+function mostrarLista(itens, destino) {
+  for (const item of itens) {
+    const elemento = criarElementoConta(item);
+    destino.append(elemento);
+  }
+}
+
+function criarElementoConta(item) {
+  const li = document.createElement("li");
+  li.textContent = `${item.servico}: ${item.pontuacao} pontos (${item.faixa})`;
+  li.classList.add("conta");       // classe comum a todos
+  li.classList.add(item.faixa);    // classe da faixa: excelente, boa, atencao ou critica
+  return li;
+}
