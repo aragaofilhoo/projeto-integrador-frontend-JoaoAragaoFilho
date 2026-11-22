@@ -14,3 +14,26 @@ function calcularPontuacao(conta, diasLimite = 90) {
 
   return pontosTamanho + pontosTroca;
 }
+
+function classificarPontuacao(pontuacao) {
+  if (pontuacao >= 90) {
+    return "excelente";
+  } else if (pontuacao >= 70) {
+    return "boa";
+  } else if (pontuacao >= 40) {
+    return "atencao";
+  } else {
+    return "critica";
+  }
+}
+
+calcularPontuacao({ servico: "teste", tamanhoSenha: 16, diasDesdeTroca: 30 });
+
+calcularPontuacao({ servico: "teste", tamanhoSenha: 6, diasDesdeTroca: 400 });
+
+calcularPontuacao({ servico: "teste", tamanhoSenha: 10, diasDesdeTroca: 120 }, 180);
+
+classificarPontuacao(100);
+classificarPontuacao(80);
+classificarPontuacao(55);
+classificarPontuacao(24);
