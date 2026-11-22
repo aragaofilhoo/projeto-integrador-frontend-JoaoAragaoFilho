@@ -117,3 +117,25 @@ function dicaPorCategoria(categoria) {
 
   return dica;
 }
+
+let quantidadeAtendeMinimo = 0;  // contador
+let somaTamanhos = 0;            // acumulador
+let maiorTamanho = 0;            // máximo
+let nomeMaiorSenha = "";
+
+for (let i = 0; i < senhasExemplo.length; i++) {
+  const senha = senhasExemplo[i];
+
+  if (senha.tamanho >= tamanhoMinimo) {
+    quantidadeAtendeMinimo++;
+  }
+
+  somaTamanhos += senha.tamanho;
+
+  if (senha.tamanho > maiorTamanho) {
+    maiorTamanho = senha.tamanho;
+    nomeMaiorSenha = senha.nome;
+  }
+}
+
+const mediaTamanhos = somaTamanhos / senhasExemplo.length;
