@@ -181,3 +181,17 @@ if (senhasDigitadas.length > 0) {
   console.log("===== SENHAS DIGITADAS POR VOCÊ =====");
   console.table(senhasDigitadas);
 }
+
+/*
+  ===== TESTE DE MESA (laço principal, tamanhoMinimo = 8) =====
+
+  Volta | i | senha.nome      | tamanho | atende (>= 8)? | contador | soma | maiorTamanho
+  ------|---|-----------------|---------|----------------|----------|------|-------------
+  início| - | -               | -       | -              | 0        | 0    | 0
+  1     | 0 | senhaEmail      | 8       | sim            | 1        | 8    | 8
+  2     | 1 | senhaBanco      | 16      | sim            | 2        | 24   | 16
+  3     | 2 | senhaRedeSocial | 10      | sim            | 3        | 34   | 16
+
+  Conferido com o console: os valores finais batem com a tabela e
+  com as frases exibidas.
+*/
