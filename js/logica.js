@@ -25,3 +25,12 @@
     6. Repetir pedindo senhas ao usuário até digitar "sair"
     7. Mostrar frases e console.table
 */
+
+const senhasExemplo = [
+  { nome: "senhaEmail",    tamanho: 8,  categoria: "email",  usaSimbolos: false },
+  { nome: "senhaBanco",    tamanho: 16, categoria: "banco",  usaSimbolos: true  },
+  { nome: "senhaRedeSocial", tamanho: 10, categoria: "social", usaSimbolos: false },
+  { nome: "senhaTrabalho", tamanho: 12, categoria: "trabalho", usaSimbolos: true },
+  { nome: "senhaStreaming", tamanho: 6, categoria: "streaming", usaSimbolos: false },
+  { nome: "senhaCofre",    tamanho: 24, categoria: "banco",  usaSimbolos: true  }
+];
