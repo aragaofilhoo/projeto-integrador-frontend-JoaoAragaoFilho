@@ -6,3 +6,11 @@ const contasCadastradas = [
   { servico: "streaming", tamanhoSenha: 6,  diasDesdeTroca: 400 },
   { servico: "cofre",     tamanhoSenha: 24, diasDesdeTroca: 10  }
 ];
+
+function calcularPontuacao(conta, diasLimite = 90) {
+  const pontosTamanho = Math.min(conta.tamanhoSenha * 4, 60);
+
+  const pontosTroca = conta.diasDesdeTroca <= diasLimite ? 40 : 0;
+
+  return pontosTamanho + pontosTroca;
+}
